@@ -13,17 +13,17 @@ class MyWidget extends StatefulWidget {
 
 class _MyWidgetState extends State<MyWidget> {
   Timer? timer;
-  Duration duration = Duration(days: 2);
+  Duration duration = const Duration(days: 2);
 
   void start({bool reset = true}) {
     if (reset == true) {
       resetCountdown();
     }
-    timer = Timer.periodic(Duration(seconds: 1), (_) => setCountdown());
+    timer = Timer.periodic(const Duration(seconds: 1), (_) => setCountdown());
   }
 
   void setCountdown() {
-    final removeByOne = 1;
+    const removeByOne = 1;
     setState(() {
       final seconds = duration.inSeconds - removeByOne;
       if (seconds < 0) {
@@ -45,7 +45,7 @@ class _MyWidgetState extends State<MyWidget> {
 
   void resetCountdown() {
     setState(() {
-      duration = Duration(days: 2);
+      duration = const Duration(days: 2);
     });
   }
 
